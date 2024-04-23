@@ -1,0 +1,22 @@
+version: '3.9'
+
+services:
+  # SQL Server container
+  mssql-container:
+    # Use the SQL Server Docker image from Microsoft
+    image: mcr.microsoft.com/mssql/server:latest
+    # Add the container name
+    container_name: mssql-container 
+    # Set environment variables for SQL Server configuration
+    environment:
+      - ACCEPT_EULA=Y   # Accept the End-User License Agreement
+      - SA_PASSWORD=Test@password # Set the 'sa' user password
+    # Map host machine port 1433 to container port 1433 for SQL Server
+    ports:
+      - "1433:1433"
+    # Volume to persist SQL Server data
+    volumes:
+      - mssql-container-data:/var/opt/mssql
+# Define the volume
+volumes:
+  mssql-container-data:
