@@ -6,5 +6,5 @@ Tool we used in this project and you will need it:
 - Docker
 - SQL Server Management
 <br>
-Run the command `docker-compose -f sqlserver-docker-compose.yml up`
+Run the command `docker-compose -f sqlserver-docker-compose.yml up`\
 Run 'Update-Database'
